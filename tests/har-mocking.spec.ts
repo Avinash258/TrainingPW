@@ -20,3 +20,4 @@ test('gets the json from HAR and checks the new fruit has been added', async ({ 
   // Assert that the Playwright fruit is visible (from the HAR mock)
   await expect(page.getByText('Playwright', { exact: true })).toBeVisible();
 });
+
