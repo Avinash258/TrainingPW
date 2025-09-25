@@ -2,8 +2,8 @@ import {test,expect} from '@playwright/test';
 
 test ('Get all',async({request})=>{
 
-    //const requestUrl = 'https://api.restful-api.dev/objects/ff8081819782e69e01996fe31cd47480';
-const requestUrl = 'https://api.restful-api.dev/objects';
+    const requestUrl = 'https://api.restful-api.dev/objects/ff8081819782e69e019974e216a907c4';
+  // const requestUrl = 'https://api.restful-api.dev/objects';
     const response = await request.get(requestUrl);
 
     await expect(response.ok()).toBeTruthy();
@@ -45,47 +45,31 @@ test ('Post CAll',async({request})=>{
 });
 
 
-test ('Put CAll',async({request})=>{
-
-
-    const requestUrl = 'https://api.restful-api.dev/objects/ff8081819782e69e019970f8ecd579c2';
-
-    const data ={
-        
-        "name": "Apple MacBook Pro 16",
-     "data": {
-      "year": 2019,
-      "price": 2049.99,
+test("Put CAll", async ({ request }) => {
+  const requestUrl = "https://api.restful-api.dev/objects/ff8081819782e69e019974e99be107d1";
+  const data = {
+    name: "Apple MacBook Pro 16",
+    data: {
+      year: 2019,
+      price: 2049.99,
       "CPU model": "Intel Core i9",
       "Hard disk size": "1 TB",
-      "color": "silver"
-   }
-    };
-
-
-    const response = await request.put(requestUrl,{data});
-
-     const responseBody = await response.json();
-     
-     console.log    ('Data:-',responseBody.updatedAt);
-    // console.log    ('body',responseBody);
-
-
-
-
+      color: "silver",
+    },
+  };
+  const response = await request.put(requestUrl, { data });
+  const responseBody = await response.json();
+  console.log("Data:-", responseBody.updatedAt);
+  console.log("body", responseBody);
 });
 
 test ('patch CAll',async({request})=>{
-
-
-    const requestUrl = 'https://api.restful-api.dev/objects/ff8081819782e69e019970f8ecd579c2';
-
+    const requestUrl = 'https://api.restful-api.dev/objects/ff8081819782e69e019974e216a907c4';
     const data ={
-        
-        "name": "Apple MacBook Pro 16",
+     "name": "Apple MacBook Pro 16",
      "data": {
-      "year": 3030,
-      
+     "year": 3030,
+    
    }
     };
 
@@ -106,7 +90,7 @@ test ('patch CAll',async({request})=>{
 test ('del CAll',async({request})=>{
 
 
-    const requestUrl = 'https://api.restful-api.dev/objects/ff8081819782e69e019970f8ecd579c2';
+    const requestUrl = 'https://api.restful-api.dev/objects/ff8081819782e69e019974e216a907c4';
 
 
     const response = await request.delete(requestUrl);
